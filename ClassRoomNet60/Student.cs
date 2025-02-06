@@ -17,17 +17,17 @@ namespace ClassRoomNet60
         public int BirthdayDay { get; private set; }
         public Student(string name, int birthMonth, int birthDayDay) 
         { 
-            Name = name;
-            BirthdayMonth = birthMonth;
-            BirthdayDay = birthDayDay;
             if(BirthdayMonth > 12 || BirthdayMonth < 0)
             {
-                throw new Exception($"Du kan ikke føde folk udenfor 1 til 12 måned {BirthdayMonth}");
+                throw new ArgumentOutOfRangeException($"Du kan ikke føde folk udenfor 1 til 12 måned {BirthdayMonth}");
             }
             if (BirthdayDay < 0 || BirthdayDay > 31)
             {
-                throw new Exception($"Der ikke nogle måneder over 31 eller mindre end 0 {BirthdayDay}");
+                throw new ArgumentOutOfRangeException($"Der ikke nogle måneder over 31 eller mindre end 0 {BirthdayDay}");
             }
+            Name = name;
+            BirthdayMonth = birthMonth;
+            BirthdayDay = birthDayDay;
         }
 
         public string SeasonOfBirth()
