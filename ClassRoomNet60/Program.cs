@@ -21,7 +21,7 @@ internal class Program
             classRoom.Students.Add(s1);
             classRoom.Students.Add(s2);
 
-
+            Console.WriteLine($"{classRoom.ClassName}");
 
 
             Console.WriteLine($"{classRoom.AllStudents()}");

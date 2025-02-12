@@ -11,7 +11,7 @@ namespace ClassRoomNet60
         public string ClassName { get; set; }
 
         public List<Student> Students { get; set; }
-
+        
         public DateOnly SemesterStart { get; set; }
 
         public ClassRoom()
@@ -28,10 +28,10 @@ namespace ClassRoomNet60
             var Fall = Students.Where(x => x.BirthdayMonth == 9 || x.BirthdayMonth == 10 || x.BirthdayMonth == 11);
 
 
-            sb.AppendLine($"Antallet i hver måned: {Winter.Count()}");
-            sb.AppendLine($"Antallet i hver måned: {Spring.Count()}");
-            sb.AppendLine($"Antallet i hver måned: {Summer.Count()}");
-            sb.AppendLine($"Antallet i hver måned: {Fall.Count()}");
+            sb.AppendLine($"Antallet i hver måned (vinter): {Winter.Count()}");
+            sb.AppendLine($"Antallet i hver måned (forår): {Spring.Count()}");
+            sb.AppendLine($"Antallet i hver måned (sommer): {Summer.Count()}");
+            sb.AppendLine($"Antallet i hver måned (efterår): {Fall.Count()}");
             
             return sb.ToString();
         }
